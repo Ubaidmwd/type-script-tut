@@ -144,35 +144,62 @@
 // console.log(func(2, 4, 3, 4, 5, 6, 7));
 
 // /************** object in function  in ts ***************/
-interface Product {
-  name: string;
-  price: number;
-  stock: number;
-  icon: string;
-  readonly id: string;
+// interface Product {
+//   name: string;
+//   price: number;
+//   stock: number;
+//   icon: string;
+//   readonly id: string;
+// }
+
+// type ProductType = (product: Product) => object;
+
+// const getProduct: ProductType = (product) => {
+//   return product;
+// };
+
+// const product1: Product = {
+//   name: "mack book",
+//   price: 12,
+//   stock: 333,
+//   icon: "test.url",
+//   id: "1",
+// };
+
+// const product2: Product = {
+//   name: "mack book",
+//   price: 12,
+//   stock: 333,
+//   icon: "test.url",
+//   id: "2",
+// };
+
+// console.log(getProduct(product1));
+// console.log(getProduct(product2));
+
+/************** Never type  in ts ***************/
+
+// const errorHandler = (): never => {
+//   throw new Error();
+// };
+
+/************** to handle the option  in ts ***************/
+
+// type themeMode = "light" | "dark";
+// const theme: themeMode = "dark";
+// console.log(theme);
+
+/************** Class  in ts ***************/
+class Student {
+  constructor(
+    public name: string,
+    private age: number,
+    protected marks: number
+  ) {}
+  getMyage = () => {
+    return this.age;
+  };
 }
 
-type ProductType = (product: Product) => object;
-
-const getProduct: ProductType = (product) => {
-  return product;
-};
-
-const product1: Product = {
-  name: "mack book",
-  price: 12,
-  stock: 333,
-  icon: "test.url",
-  id: "1",
-};
-
-const product2: Product = {
-  name: "mack book",
-  price: 12,
-  stock: 333,
-  icon: "test.url",
-  id: "2",
-};
-
-console.log(getProduct(product1));
-console.log(getProduct(product2));
+const std = new Student("Abdul Wahab", 24, 88);
+console.log(std.getMyage());
