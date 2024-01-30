@@ -232,23 +232,43 @@
 // console.log(std2.getMyage());
 
 /************** getter & setter function in oop  in ts ***************/
-class Student {
-  constructor(
-    public name: string,
-    private age: number,
-    protected marks: number
-  ) {}
-  get getMyage() {
-    // get is used for getter function
-    return this.age;
-  }
-  set setMyage(val: number) {
-    // get is used for getter function
-    this.age = val;
-  }
+// class Student {
+//   constructor(
+//     public name: string,
+//     private age: number,
+//     protected marks: number
+//   ) {}
+//   get getMyage() {
+//     // get is used for getter function
+//     return this.age;
+//   }
+//   set setMyage(val: number) {
+//     // get is used for getter function
+//     this.age = val;
+//   }
+// }
+
+// const std = new Student("Abdul Wahab", 24, 88);
+// console.log(std.getMyage);
+// std.setMyage = 55;
+// console.log(std.getMyage);
+
+/************** Interface Class  in ts ***************/
+interface StudentType {
+  name: string;
+  age: number;
+  marks: number;
+}
+interface GetIdType {
+  getMyage: () => string;
+}
+class Student implements StudentType, GetIdType {
+  private id: string = String(Math.random() * 1000);
+  constructor(public name: string, public age: number, public marks: number) {}
+  getMyage = () => {
+    return this.id;
+  };
 }
 
 const std = new Student("Abdul Wahab", 24, 88);
-console.log(std.getMyage);
-std.setMyage = 55;
-console.log(std.getMyage);
+console.log(std.getMyage());
