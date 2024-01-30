@@ -190,6 +190,21 @@
 // console.log(theme);
 
 /************** Class  in ts ***************/
+// class Student {
+//   constructor(
+//     public name: string,
+//     private age: number,
+//     protected marks: number
+//   ) {}
+//   getMyage = () => {
+//     return this.age;
+//   };
+// }
+
+// const std = new Student("Abdul Wahab", 24, 88);
+// console.log(std.getMyage());
+
+/************** inheritance  in ts ***************/
 class Student {
   constructor(
     public name: string,
@@ -197,9 +212,36 @@ class Student {
     protected marks: number
   ) {}
   getMyage = () => {
-    return this.age;
+    return [this.age, this.marks, this.name];
+  };
+}
+class Student2 extends Student {
+  address: string;
+  constructor(name: string, age: number, marks: number, address: string) {
+    super(name, age, marks);
+    this.address = address;
+  }
+  getMyage = () => {
+    return [this.marks, this.name, this.address];
   };
 }
 
 const std = new Student("Abdul Wahab", 24, 88);
-console.log(std.getMyage());
+const std2 = new Student2("Hizb Ullah", 24, 88, "Marwandi");
+
+console.log(std2.getMyage());
+/************** getter function in oop  in ts ***************/
+// class Student {
+//   constructor(
+//     public name: string,
+//     private age: number,
+//     protected marks: number
+//   ) {}
+//   get getMyage() {
+//     // get is used for getter function
+//     return this.age;
+//   }
+// }
+
+// const std = new Student("Abdul Wahab", 24, 88);
+// console.log(std.getMyage);
