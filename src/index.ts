@@ -254,21 +254,35 @@
 // console.log(std.getMyage);
 
 /************** Interface Class  in ts ***************/
-interface StudentType {
-  name: string;
-  age: number;
-  marks: number;
-}
-interface GetIdType {
-  getMyage: () => string;
-}
-class Student implements StudentType, GetIdType {
-  private id: string = String(Math.random() * 1000);
-  constructor(public name: string, public age: number, public marks: number) {}
-  getMyage = () => {
-    return this.id;
-  };
-}
+// interface StudentType {
+//   name: string;
+//   age: number;
+//   marks: number;
+// }
+// interface GetIdType {
+//   getMyage: () => string;
+// }
+// class Student implements StudentType, GetIdType {
+//   private id: string = String(Math.random() * 1000);
+//   constructor(public name: string, public age: number, public marks: number) {}
+//   getMyage = () => {
+//     return this.id;
+//   };
+// }
 
-const std = new Student("Abdul Wahab", 24, 88);
-console.log(std.getMyage());
+// const std = new Student("Abdul Wahab", 24, 88);
+// console.log(std.getMyage());
+
+/************** Type assertion in ts ***************/
+
+// syntax 1
+// const btn = document.getElementById("btn") as HTMLElement;
+// btn.onclick;
+
+// syntax 2
+const btn = <HTMLElement>document.getElementById("btn");
+btn.onclick;
+
+// syntax 3
+// const btn = document.getElementById("btn") as HTMLElement;
+// btn.onclick;
