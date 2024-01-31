@@ -4,8 +4,8 @@ const obj = {
     name: "abc",
     email: "u@gmail.com",
 };
-const getName = () => {
-    console.log(obj.name);
+const getData = (key) => {
+    console.log(obj[key]);
 };
 console.log(obj);
-getName();
+getData("name");

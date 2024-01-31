@@ -304,6 +304,26 @@
 // };
 
 /************** Index signature in ts ***************/
+// interface Obj {
+//   [key: string]: string;
+// }
+
+// const obj: Obj = {
+//   name: "abc",
+//   email: "u@gmail.com",
+// };
+// const getName = () => {
+//   console.log(obj["name"]);
+// };
+
+// const getData = (key: string) => {
+//   console.log(obj[key]);
+// };
+// console.log(obj);
+// getName();
+// getData("email");
+
+/************** keyof  in ts ***************/
 interface Obj {
   name: string;
   email: string;
@@ -313,8 +333,10 @@ const obj: Obj = {
   name: "abc",
   email: "u@gmail.com",
 };
-const getName = () => {
-  console.log(obj.name);
+
+const getData = (key: keyof Obj) => {
+  console.log(obj[key]);
 };
 console.log(obj);
-getName();
+
+getData("name");
