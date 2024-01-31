@@ -225,12 +225,25 @@
 // const std = new Student("Abdul Wahab", 24, 88);
 // console.log(std.getMyage());
 /************** Type assertion in ts ***************/
+// working as a dom in ts
 // syntax 1
 // const btn = document.getElementById("btn") as HTMLElement;
 // btn.onclick;
 // syntax 2
-const btn = document.getElementById("btn");
-btn.onclick;
-// syntax 3
-// const btn = document.getElementById("btn") as HTMLElement;
+// const btn = <HTMLElement>document.getElementById("btn");
 // btn.onclick;
+// syntax 3
+// const btn = document.getElementById("btn")!;
+// btn.onclick;
+// const img = document.querySelector("img")!;
+// img.src = "https://picsum.photos/200/300/?blur=2";
+const myform = document.getElementById("myform");
+const myinput = document.querySelector("form > input");
+myform.onsubmit = (e) => {
+    e.preventDefault();
+    const val = Number(myinput.value);
+    const h2 = document.createElement("h2");
+    h2.textContent = String(val * val);
+    const body = document.querySelector("body");
+    body.append(h2);
+};
