@@ -290,15 +290,31 @@
 // const img = document.querySelector("img")!;
 // img.src = "https://picsum.photos/200/300/?blur=2";
 
-const myform = document.getElementById("myform")!;
+// const myform = document.getElementById("myform")!;
 
-const myinput = document.querySelector("form > input") as HTMLInputElement;
+// const myinput = document.querySelector("form > input") as HTMLInputElement;
 
-myform.onsubmit = (e: SubmitEvent) => {
-  e.preventDefault();
-  const val = Number(myinput.value);
-  const h2 = document.createElement("h2");
-  h2.textContent = String(val * val);
-  const body = document.querySelector("body")!;
-  body.append(h2);
+// myform.onsubmit = (e: SubmitEvent) => {
+//   e.preventDefault();
+//   const val = Number(myinput.value);
+//   const h2 = document.createElement("h2");
+//   h2.textContent = String(val * val);
+//   const body = document.querySelector("body")!;
+//   body.append(h2);
+// };
+
+/************** Index signature in ts ***************/
+interface Obj {
+  name: string;
+  email: string;
+}
+
+const obj: Obj = {
+  name: "abc",
+  email: "u@gmail.com",
 };
+const getName = () => {
+  console.log(obj.name);
+};
+console.log(obj);
+getName();
