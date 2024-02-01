@@ -324,25 +324,36 @@
 // getData("email");
 
 /************** keyof  in ts ***************/
-interface Obj {
-  name: string;
-  email: string;
+// interface Obj {
+//   name: string;
+//   email: string;
+// }
+
+// const obj: Obj = {
+//   name: "abc",
+//   email: "u@gmail.com",
+// };
+
+// const getData = (key: keyof Obj) => {
+//   console.log(obj[key]);
+// };
+// console.log(obj);
+
+// // getData("name"); direct value // 1st method
+
+// // let key = "name"; // when we use let method for declarion of variable below method is used
+// // getData(key as keyof Obj); // 2nd method
+
+// let key = "email";
+// getData(key as keyof typeof obj); // 3rd method wit object type
+
+/************** utilize  in ts ***************/
+interface Point {
+  x: number;
+  y: number;
 }
 
-const obj: Obj = {
-  name: "abc",
-  email: "u@gmail.com",
-};
+let pointPart: Partial<Point> = {}; // `Partial` allows x and y to be optional
+pointPart.x = 10;
 
-const getData = (key: keyof Obj) => {
-  console.log(obj[key]);
-};
-console.log(obj);
-
-// getData("name"); direct value // 1st method
-
-// let key = "name"; // when we use let method for declarion of variable below method is used
-// getData(key as keyof Obj); // 2nd method
-
-let key = "email";
-getData(key as keyof typeof obj); // 3rd method wit object type
+console.log(pointPart);
