@@ -388,14 +388,31 @@
 
 // 3) Readonly<type> it is used for the only read the data the change was not possible
 
-type User = {
-  name?: string;
-  email?: string;
-};
+// type User = {
+//   name?: string;
+//   email?: string;
+// };
 
-const User2: Readonly<User> = {
-  name: "abd",
-  email: "test@gmail.com",
+// const User2: Readonly<User> = {
+//   name: "abd",
+//   email: "test@gmail.com",
+// };
+
+// console.log(User2);
+
+// 4) Record<type> it is used for the only read the data the change was not possible
+
+interface UserInfo {
+  age: number;
+}
+type User = "AbdulWahab" | "Hizbullah";
+const User2: Record<User, UserInfo> = {
+  AbdulWahab: {
+    age: 24,
+  },
+  Hizbullah: {
+    age: 24,
+  },
 };
 
 console.log(User2);
