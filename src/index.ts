@@ -347,13 +347,13 @@
 // let key = "email";
 // getData(key as keyof typeof obj); // 3rd method wit object type
 
-/************** utilize  in ts ***************/
-interface Point {
-  x: number;
-  y: number;
-}
+/************** TypeScript Utility Types ***************/
 
-let pointPart: Partial<Point> = {}; // `Partial` allows x and y to be optional
-pointPart.x = 10;
+// 1) partial<type>
 
-console.log(pointPart);
+type user = {
+  name: string;
+  email: string;
+};
+
+type user2 = Partial<user>;
