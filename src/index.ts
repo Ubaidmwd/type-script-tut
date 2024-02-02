@@ -427,10 +427,26 @@
 // type ShippingInfo = Pick<OrderInfo, "city" | "status">;
 
 // 6) Omit<type> it is used for the remove  properties
-interface OrderInfo {
-  name: string;
-  price: number;
-  city: string;
-  status: string;
-}
-type ShippingInfo = Omit<OrderInfo, "city" | "status">;
+// interface OrderInfo {
+//   name: string;
+//   price: number;
+//   city: string;
+//   status: string;
+// }
+// type ShippingInfo = Omit<OrderInfo, "city" | "status">;
+
+// 7) Exclude<Type, ExcludedUnion> to remove the data type
+
+// type MyUnion = string | number | boolean;
+
+// type ex = Exclude<MyUnion, boolean>;
+
+// 8) Extract<Type, Union> to except those data type which is given in a parameter
+// type MyUnion = string | number | boolean;
+
+// type ex = Extract<MyUnion, boolean>;
+
+// 9) NonNullable<Type> it doesnot accept the null or undefined datatype
+type MyUnion = string | number | boolean | null | undefined;
+
+type ex = NonNullable<MyUnion>;
