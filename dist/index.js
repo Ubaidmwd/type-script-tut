@@ -1,5 +1,7 @@
 "use strict";
 /*************data type************/
-let pointPart = {}; // `Partial` allows x and y to be optional
-pointPart.x = 10;
-console.log(pointPart);
+const User2 = {
+    name: "abd",
+    email: "test@gmail.com",
+};
+console.log(User2);

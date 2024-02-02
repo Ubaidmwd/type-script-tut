@@ -348,12 +348,54 @@
 // getData(key as keyof typeof obj); // 3rd method wit object type
 
 /************** TypeScript Utility Types ***************/
+// Type Utility
 
-// 1) partial<type>
+// Partial <Type>
+// Requried <Type>
+// Readonly <Type>
+// Record<Keys, Type>
+// Pick<Type, Keys>
+// Omit<Type, Keys>
+// Exclude<Type, ExcludedUnion>
+// Extract<Type, Union>
+// NonNullable<Type>
+// Parameters<Type>
+// ConstructorParameter<Type>
+// ReturnType<Type>
+// InstanceType<Type>
 
-type user = {
-  name: string;
-  email: string;
+// 1) Partial<type>
+
+// type User = {
+//   name: string;
+//   email: string;
+// };
+
+// type User2 = Partial<User>;
+
+// 2) Required<type> it is oposite of partial
+
+// type User = {
+//   name?: string;
+//   email?: string;
+// };
+
+// const User2: Required<User> = {
+//   name: "abd",
+//   email: "test@gmail.com",
+// };
+// console.log(User2);
+
+// 3) Readonly<type> it is used for the only read the data the change was not possible
+
+type User = {
+  name?: string;
+  email?: string;
 };
 
-type user2 = Partial<user>;
+const User2: Readonly<User> = {
+  name: "abd",
+  email: "test@gmail.com",
+};
+
+console.log(User2);
