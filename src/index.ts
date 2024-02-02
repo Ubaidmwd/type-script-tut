@@ -447,6 +447,35 @@
 // type ex = Extract<MyUnion, boolean>;
 
 // 9) NonNullable<Type> it doesnot accept the null or undefined datatype
-type MyUnion = string | number | boolean | null | undefined;
+// type MyUnion = string | number | boolean | null | undefined;
 
-type ex = NonNullable<MyUnion>;
+// type ex = NonNullable<MyUnion>;
+
+// 10) Parameters<Type>
+// const myfunc = (a: number, b: number) => {
+//   console.log(a + b);
+// };
+// type random = Parameters<typeof myfunc>;
+
+// 11) ConstructorParameter<Type>
+// class student_data {
+//   constructor(name: string, age: number) {}
+// }
+// type random = ConstructorParameters<typeof student_data>;
+
+// 12) ReturnType<Type>
+// const myfunc = (a: number, b: number): number => {
+//   return a + b;
+// };
+// type random = ReturnType<typeof myfunc>;
+// 13) InstanceType<Type>
+// class student_data {
+//   constructor(name: string, age: number) {}
+// }
+// type Random = InstanceType<typeof student_data>;
+
+// const user: Random = {
+//   name: "Jan",
+//   age: 24,
+// };
+// console.log(user);
