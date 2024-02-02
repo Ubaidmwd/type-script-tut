@@ -387,3 +387,24 @@
 //   age: 24,
 // };
 // console.log(user);
+/************** Genrics TypeScript  ***************/
+//example 1
+// type Person = {
+//   name: string;
+//   age: number;
+// };
+// const func = <t>(n: t): t => {
+//   return n;
+// };
+// const person: Person = {
+//   name: "Ubaid Ullah",
+//   age: 27,
+// };
+// const res = func<Person>(person);
+// console.log(res);
+// example 2
+const func = (n, o) => {
+    return { n, o };
+};
+const res = func(24, "lol");
+console.log(res);
