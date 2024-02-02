@@ -400,19 +400,37 @@
 
 // console.log(User2);
 
-// 4) Record<type> it is used for the only read the data the change was not possible
+// 4) Record<type>
 
-interface UserInfo {
-  age: number;
+// interface UserInfo {
+//   age: number;
+// }
+// type User = "AbdulWahab" | "Hizbullah";
+// const User2: Record<User, UserInfo> = {
+//   AbdulWahab: {
+//     age: 24,
+//   },
+//   Hizbullah: {
+//     age: 24,
+//   },
+// };
+
+// console.log(User2);
+
+// 5) Pick<type> it is used for the create duplicate properties
+// interface OrderInfo {
+//   name: string;
+//   price: number;
+//   city: string;
+//   status: string;
+// }
+// type ShippingInfo = Pick<OrderInfo, "city" | "status">;
+
+// 6) Omit<type> it is used for the remove  properties
+interface OrderInfo {
+  name: string;
+  price: number;
+  city: string;
+  status: string;
 }
-type User = "AbdulWahab" | "Hizbullah";
-const User2: Record<User, UserInfo> = {
-  AbdulWahab: {
-    age: 24,
-  },
-  Hizbullah: {
-    age: 24,
-  },
-};
-
-console.log(User2);
+type ShippingInfo = Omit<OrderInfo, "city" | "status">;
