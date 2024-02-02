@@ -501,9 +501,46 @@
 
 // example 2
 
-const func = <T, U>(n: T, o: U): { n: T; o: U } => {
+// const func = <T, U>(n: T, o: U): { n: T; o: U } => {
+//   return { n, o };
+// };
+
+// const res = func<number, string>(24, "lol");
+// console.log(res);
+
+//example 3
+// const func = <T, U extends T>(n: T, o: U): { n: T; o: U } => {
+//   return { n, o };
+// };
+
+// const res = func<number, number>(24, 4);
+// console.log(res);
+
+//example 4
+type Student = {
+  name: string;
+  age: number;
+};
+type Student2 = {
+  name: string;
+  age: number;
+  phone: number;
+};
+const func = <T, U extends T>(n: T, o: U): { n: T; o: U } => {
   return { n, o };
 };
 
-const res = func<number, string>(24, "lol");
+const student: Student = {
+  name: "Ubaid Ullah",
+  age: 24,
+};
+const student2: Student2 = {
+  name: "Hizb Ullah",
+  age: 22,
+  phone: 1314122,
+};
+
+const res = func<Student, Student2>(student, student2);
 console.log(res);
+
+//example 5
