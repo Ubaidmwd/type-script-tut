@@ -517,30 +517,58 @@
 // console.log(res);
 
 //example 4
-type Student = {
-  name: string;
-  age: number;
-};
-type Student2 = {
-  name: string;
-  age: number;
-  phone: number;
-};
-const func = <T, U extends T>(n: T, o: U): { n: T; o: U } => {
-  return { n, o };
-};
+// type Student = {
+//   name: string;
+//   age: number;
+// };
+// type Student2 = {
+//   name: string;
+//   age: number;
+//   phone: number;
+// };
+// const func = <T, U extends T>(n: T, o: U): { n: T; o: U } => {
+//   return { n, o };
+// };
 
-const student: Student = {
-  name: "Ubaid Ullah",
-  age: 24,
-};
-const student2: Student2 = {
-  name: "Hizb Ullah",
-  age: 22,
-  phone: 1314122,
-};
+// const student: Student = {
+//   name: "Ubaid Ullah",
+//   age: 24,
+// };
+// const student2: Student2 = {
+//   name: "Hizb Ullah",
+//   age: 22,
+//   phone: 1314122,
+// };
 
-const res = func<Student, Student2>(student, student2);
-console.log(res);
+// const res = func<Student, Student2>(student, student2);
+// console.log(res);
 
 //example 5
+
+type Person = {
+  name: string;
+  age: number;
+};
+
+const users: Person[] = [
+  {
+    name: "Feroz Khan",
+    age: 27,
+  },
+
+  {
+    name: "Abdul Wahab",
+    age: 24,
+  },
+];
+const filterByPeoples = <T, Key extends keyof T>(
+  arr: T[],
+  property: Key,
+  value: T[Key]
+): T[] => {
+  return arr.filter((item) => item[property] === value);
+};
+
+const filterPeopleName = filterByPeoples(users, "name", "Feroz Khan");
+const filterPeopleAge = filterByPeoples(users, "age", 24);
+console.log(filterPeopleAge);

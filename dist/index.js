@@ -1,32 +1,18 @@
 "use strict";
 /*************data type************/
-// const func = (n, o) => {
-//   return { n, o };
-// };
-// const student = {
-//   name: "Ubaid Ullah",
-//   age: 24,
-// };
-// const student2 = {
-//   name: "Hizb Ullah",
-//   age: 22,
-//   phone: 1314122,
-// };
-// const res = func(student, student2);
-// console.log(res);
-
-//example 5
-const func = (n, o) => {
-  return { n, o };
+const users = [
+    {
+        name: "Feroz Khan",
+        age: 27,
+    },
+    {
+        name: "Abdul Wahab",
+        age: 24,
+    },
+];
+const filterByPeoples = (arr, property, value) => {
+    return arr.filter((item) => item[property] === value);
 };
-const student = {
-  name: "Ubaid Ullah",
-  age: 24,
-};
-const student2 = {
-  name: "Hizb Ullah",
-  age: 22,
-  phone: 1314122,
-};
-const res = func(student, student2);
-console.log(res);
+const filterPeopleName = filterByPeoples(users, "name", "Feroz Khan");
+const filterPeopleAge = filterByPeoples(users, "age", 24);
+console.log(filterPeopleAge);
